@@ -9,7 +9,7 @@ fi
 
 # This little script will automatically switch to the node version specified inin
 # the .node-version or .nvmrc file in the current directory, but only reading the first line.
-eval $(fnm env)
+eval $(fnm env --version-file-strategy=recursive)
 autoload -U add-zsh-hook
 function _fnm_autoload_hook () {
     if [[ -f .node-version ]]; then
